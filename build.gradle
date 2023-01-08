@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'antlr'
+}
+
+group 'org.dersbian'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    antlr 'org.antlr:antlr4:4.11.1'
+}
+
+generateGrammarSource {
+    outputs.cacheIf { true }
+    maxHeapSize = "64m"
+    arguments += [ '-visitor', '-long-messages','-encoding', 'utf8' ,'-Xexact-output-dir']
+    outputDirectory = "src/main/java/org/dersbian" as File
+}
+
+compileJava {
+    //options.warnings = true
+    //options.deprecation = true
+    options.compilerArgs += ['-Xlint:all', '-Xlint:-processing', '-proc:none']
+}
+
+compileTestJava {
+    //options.warnings = true
+    //options.deprecation = true
+    options.compilerArgs += ['-Xlint:all', '-Xlint:-processing', '-proc:none']
+}
+
+test {
+    useJUnitPlatform()
+}

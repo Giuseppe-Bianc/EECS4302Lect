@@ -1,0 +1,17 @@
+T__0=1
+T__1=2
+T__2=3
+T__3=4
+ID=5
+NUM=6
+HEX_DIGIT=7
+BIN_DIGIT=8
+OCT_DIGIT=9
+INT_TYPE=10
+COMENT=11
+WS=12
+':'=1
+'='=2
+'*'=3
+'+'=4
+'INT'=10
