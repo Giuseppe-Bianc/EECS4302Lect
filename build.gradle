@@ -20,7 +20,7 @@ generateGrammarSource {
     outputs.cacheIf { true }
     maxHeapSize = "64m"
     arguments += [ '-visitor', '-long-messages','-encoding', 'utf8' ,'-Xexact-output-dir']
-    outputDirectory = "src/main/java/org/dersbian" as File
+    outputDirectory = "src/main/java/org/dersbian/antlrgen" as File
 }
 
 compileJava {

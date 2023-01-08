@@ -1,7 +1,7 @@
 grammar Expr;
 
 @header {
-    package org.dersbian;
+    package org.dersbian.antlrgen;
 }
 
 prog: (decl | expr)+ EOF  # Program;
